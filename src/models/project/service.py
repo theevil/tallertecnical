@@ -7,7 +7,6 @@ from .model import ProjectCreate, ProjectUpdate, ProjectResponse
 
 
 def create_project(db_session: Session, project_data: ProjectCreate) -> Project:
-    """Create a new project."""
     project = Project(
         name=project_data.name,
         description=project_data.description
@@ -18,15 +17,12 @@ def create_project(db_session: Session, project_data: ProjectCreate) -> Project:
     return project
 
 def get_project_by_id(db_session: Session, project_id: UUID) -> Optional[Project]:
-    """Get a project by its ID."""
     return db_session.get(Project, project_id)
 
 def get_all_projects(db_session: Session) -> List[Project]:
-    """Get all projects."""
     return db_session.query(Project).all()
 
 def delete_project(db_session: Session, project_id: UUID) -> bool:
-    """Delete a project by its ID."""
     project = get_project_by_id(db_session, project_id)
     if project:
         db_session.delete(project)
@@ -35,7 +31,6 @@ def delete_project(db_session: Session, project_id: UUID) -> bool:
     return False
 
 def update_project(db_session: Session, project_id: UUID, project_data: ProjectUpdate) -> Optional[Project]:
-    """Update a project with new data."""
     project = get_project_by_id(db_session, project_id)
     if project:
         update_data = project_data.dict(exclude_unset=True)

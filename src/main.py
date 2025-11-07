@@ -4,7 +4,6 @@ from src.databases.database import create_db_and_tables
 
 app = FastAPI()
 
-# Include API routers
 include_routers(app)
 
 # Create database tables on startup

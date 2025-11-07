@@ -18,7 +18,6 @@ async def create_task(
     task_data: model.TaskCreate,
     db: Session = Depends(get_session)
 ) -> model.TaskResponse:
-    """Create a new task."""
     try:
         task = service.create_task(db, task_data)
         if not task:
@@ -41,7 +40,6 @@ async def get_task(
     task_id: UUID,
     db: Session = Depends(get_session)
 ) -> model.TaskResponse:
-    """Get a task by ID."""
     task = service.get_task_by_id(db, task_id)
     if not task:
         raise HTTPException(
@@ -59,7 +57,6 @@ async def get_tasks(
     limit: int = 100,
     db: Session = Depends(get_session)
 ) -> List[model.TaskResponse]:
-    """Get all tasks with pagination."""
     tasks = service.get_all_tasks(db)
     return tasks[skip : skip + limit] if limit else tasks
 
@@ -72,7 +69,6 @@ async def update_task(
     task_data: model.TaskUpdate,
     db: Session = Depends(get_session)
 ) -> model.TaskResponse:
-    """Update a task."""
     task = service.update_task(db, task_id, task_data)
     if not task:
         raise HTTPException(
@@ -89,7 +85,6 @@ async def delete_task(
     task_id: UUID,
     db: Session = Depends(get_session)
 ) -> None:
-    """Delete a task."""
     success = service.delete_task(db, task_id)
     if not success:
         raise HTTPException(
