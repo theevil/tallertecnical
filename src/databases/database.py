@@ -4,15 +4,12 @@ from sqlmodel import SQLModel, create_engine, Session
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-# Get database URL from environment variables
 DATABASE_URL = os.getenv("DATABASE_URL")
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable not set")
 
-# Create database engine with connection pool settings
 engine = create_engine(
     DATABASE_URL,
     echo=True,  # Set to False in production
