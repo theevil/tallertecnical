@@ -1,6 +1,6 @@
 # Taller Técnico - Task Management API
 
-A FastAPI-based task management system with PostgreSQL database, featuring projects and tasks with priority levels.
+A FastAPI-based Jira Like Task Management API
 
 ## 🏗️ Project Structure
 
@@ -221,26 +221,3 @@ DATABASE_URL=postgresql://postgres:postgres@postgres:5432/jiradb
 - **postgres**: PostgreSQL 15 Alpine with health checks
 - **fastapi**: Python 3.10 application with hot reload
 
-### Volumes
-
-- `postgres_data`: Persistent storage for PostgreSQL data
-
-### Networks
-
-- Automatic bridge network for service communication
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests
-5. Submit a pull request
-
-## 📄 License
-
-This project is for educational purposes.
-
-## 👥 Authors
-
-Taller Técnico Team
