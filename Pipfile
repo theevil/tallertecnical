@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 fastapi = {extras = ["standard"], version = "*"}
+asyncpg = "*"
+databases = {extras = ["aiomysql"], version = "*"}
+dotenv = "*"
+uvicorn = "*"
 
 [dev-packages]
 
