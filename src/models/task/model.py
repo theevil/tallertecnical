@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class Task(BaseModel):
+class TaskResponse(BaseModel):
     id: int
     project_id: int
     title: str

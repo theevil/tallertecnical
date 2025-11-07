@@ -8,6 +8,8 @@ fastapi = {extras = ["standard"], version = "*"}
 asyncpg = "*"
 databases = {extras = ["aiomysql"], version = "*"}
 dotenv = "*"
+psycopg2-binary = "*"
+sqlmodel = "*"
 uvicorn = "*"
 
 [dev-packages]
